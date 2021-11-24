@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include<sys/wait.h>
+#include<unistd.h>
 #include "hmm_data_gen.h"
 #include "viterbi_helpers.h"
 
@@ -117,6 +119,7 @@ int main() {
   scanf("%d",&k);
   printf("Enter the number of observations in the sequence: ");
   scanf("%d",&t);
+  sleep(1);
   int O[n];
   int S[k];
   int Y[t];

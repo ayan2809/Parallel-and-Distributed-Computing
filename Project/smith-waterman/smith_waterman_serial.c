@@ -1,7 +1,9 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include<stdlib.h>
+#include<sys/wait.h>
+#include<unistd.h>
 #include "smith_waterman_helpers.h"
 
 /* Scoring constants */
@@ -164,6 +166,7 @@ int main(int argc, const char* argv[]) {
   int max_row;
   int max_col;
   smith_waterman_forward(ref, query, ref_len, query_len, score, pred, &max_row, &max_col);
+  sleep(1);
   printf("===========================================================\n"
          "RESULTS\n"
          "===========================================================\n");

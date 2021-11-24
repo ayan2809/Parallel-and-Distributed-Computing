@@ -112,7 +112,7 @@ void forward(
   int num_teams,
   int num_threads
 ) {
-  omp_set_num_threads(4);
+  omp_set_num_threads(10);
   int max_threads = omp_get_max_threads();
 
 #pragma omp parallel num_threads(max_threads)
@@ -359,7 +359,7 @@ void smith_waterman(char* x, char* y) {
   int n = strlen(y) + 1;
   int score[m][n];
   int pred[m][n];
-  int num_cores = 4;
+  int num_cores = 8;
 
   int *max_score_arr = (int *)malloc(sizeof(int)*num_cores);
   int *max_row_arr = (int *)malloc(sizeof(int)*num_cores);
@@ -372,8 +372,8 @@ void smith_waterman(char* x, char* y) {
       pred[i][j] = 0;
     }
   }
-  int num_teams = 2; // for coarse-grain parallelism
-  int num_threads = num_cores / num_teams; // for fine-grain parallelism
+  int num_teams = 1; // for coarse-grain parallelism
+  int num_threads = 100; // for fine-grain parallelism
   int num_stages = get_num_of_stages(m,n);
   int block_size = (int)ceil((float)num_stages / num_teams);
   forward(x,y,m,n,score,pred,max_score_arr,max_row_arr,max_col_arr,block_size,num_stages,num_teams,num_threads);

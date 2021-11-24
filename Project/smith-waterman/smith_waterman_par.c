@@ -165,7 +165,7 @@ int main() {
       start_i = m - 1;
       start_j = i - m + 3;
     }
-    #pragma omp parallel for num_threads(4)
+    #pragma omp parallel for num_threads(10)
     for (j = 0; j < num_of_elements_in_stage; j++) {
       curr_i = start_i-j;
       curr_j = start_j+j;

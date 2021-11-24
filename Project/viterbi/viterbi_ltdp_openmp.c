@@ -65,7 +65,7 @@ void viterbi(
     }
   }
   // Forward Phase
-  omp_set_num_threads(4);
+  omp_set_num_threads(10);
   int max_threads = omp_get_max_threads();
   int num_stages = t;
   int block_size = (int)ceil((float)num_stages / num_stages);
