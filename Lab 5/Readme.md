@@ -1,4 +1,4 @@
-## Lab 4 Submissions
+## Lab 5 Submissions
 
 The codes of my course Parallel and Distributed Computing using Open MP based
 on the three types of scheduling algorithms that is static, dynamic and guided
