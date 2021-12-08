@@ -13,16 +13,7 @@ void print_matrix(int m, int n, int A[m][n]);
 void convert_to_log_prob(int m, int n, float matrix[m][n]);
 void convert_array_to_log_prob(int n, float arr[n]);
 
-/*
- * Function: max
- * --------------------
- *  Returns max of two integers
- *
- *  a: first integer
- *  b: second integer
- *
- *  returns: the larger of a and b
- */
+
 int max(int a, int b) {
   if (a > b) {
     return a;
@@ -30,28 +21,12 @@ int max(int a, int b) {
   return b;
 }
 
-/*
- * Function: get_rand_float
- * --------------------
- *  Generates a random float in specified range.
- *
- *  min: lower bound of range for random float
- *  max: upper bound of range for random float
- *
- *  returns: a random float between min and max
- */
+
 float get_rand_float(float min, float max) {
     return  (max - min) * ((((float) rand()) / (float) RAND_MAX)) + min ;
 }
 
-/*
- * Function: print_arr
- * --------------------
- *  Prints an int array
- *
- *  t: size of array to print
- *  X: int array to print
- */
+
 void print_arr(int t, int X[t]) {
   for (int i=0; i<t; i++) {
     printf("%d ", X[i]);
@@ -59,14 +34,7 @@ void print_arr(int t, int X[t]) {
   printf("\n");
 }
 
-/*
- * Function: print_fl_arr
- * --------------------
- *  Prints a float array
- *
- *  t: size of array to print
- *  X: float array to print
- */
+
 void print_fl_arr(int t, float X[t]) {
   for (int i=0; i<t; i++) {
     printf("%f ", X[i]);
@@ -74,15 +42,7 @@ void print_fl_arr(int t, float X[t]) {
   printf("\n");
 }
 
-/*
- * Function: print_fl_arr
- * --------------------
- *  Prints a float matrix
- *
- *  m: num of row in matrix
- *  n: num of cols in matrix
- *  A: float matrix to print
- */
+
 void print_fl_matrix(int m, int n, float A[m][n]) {
   for (int i=0; i<m; i++) {
     for (int j=0; j<n; j++) {
@@ -92,15 +52,6 @@ void print_fl_matrix(int m, int n, float A[m][n]) {
   }
 }
 
-/*
- * Function: print_fl_arr
- * --------------------
- *  Prints an int matrix
- *
- *  m: num of row in matrix
- *  n: num of cols in matrix
- *  A: int matrix to print
- */
 void print_matrix(int m, int n, int A[m][n]) {
   for (int i=0; i<m; i++) {
     for (int j=0; j<n; j++) {
@@ -110,17 +61,7 @@ void print_matrix(int m, int n, int A[m][n]) {
   }
 }
 
-/*
- * Function: convert_to_log_prob
- * --------------------
- *  Applies natural log to each element in a float matrix
- *
- *  m: num of row in matrix
- *  n: num of cols in matrix
- *  A: float matrix to convert
- *
- *  returns: resulting matrix after applying natural log to each element of A
- */
+
 void convert_to_log_prob(int m, int n, float A[m][n]) {
   for (int i=0; i<m; i++) {
     for (int j=0; j<n; j++) {
@@ -129,16 +70,6 @@ void convert_to_log_prob(int m, int n, float A[m][n]) {
   }
 }
 
-/*
- * Function: convert_array_to_log_prob
- * --------------------
- *  Applies natural log to each element in a float array
- *
- *  n: size of array
- *  X: float array to convert
- *
- *  returns: resulting array after applying natural log to each element of X
- */
 void convert_array_to_log_prob(int n, float X[n]) {
   for (int i = 0; i < n; i++) {
     X[i] = (float)log(X[i]);

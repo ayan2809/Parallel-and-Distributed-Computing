@@ -9,7 +9,7 @@ void generate_sequence(int num_hidden_states, int num_observations, int seq_len,
 
 #define ROUNDF(f, c) (((float)((int)((f) * (c))) / (c)))
 
-/* Generates probability matrix */
+/* To Generate probability matrix */
 void generate_matrix(int m, int n, float M[m][n]) {
   float min_prob = 0.000000;
   float max_prob = 1.000000;
@@ -27,7 +27,7 @@ void generate_matrix(int m, int n, float M[m][n]) {
   }
 }
 
-/* Generates probability array */
+/* To Generate probability array */
 void generate_array(int n, float M[n]) {
   float min_prob = 0.000000;
   float max_prob = 1.000000;

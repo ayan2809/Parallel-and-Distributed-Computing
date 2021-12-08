@@ -9,23 +9,7 @@
 
 void viterbi( int n, int k, int t, int O[n], int S[k], float I[k], int Y[t], float A[k][k], float B[k][n]);
 
-/*
- * Function: viterbi
- * --------------------
- *  Computes the most likely hidden state sequence based on a sequence of observations using Viterbi Algorithm
- *
- *  n: number of possible observations
- *  k: number of possible states
- *  t: length of observed sequence
- *  O: observation space
- *  S: state space
- *  I: prior probability - I[i] is the prior probability of S[i]
- *  Y: sequence of observations - Y[t] = i if observation at time t is O[i]
- *  A: transition probability - A[i,j] is the probability of going from state S[i] to S[j]
- *  B: emission probability - B[i,j] is the probability of observing O[j] given state S[i]
- *
- *  returns: the most likely hidden state sequence corresponding to given observations Y
- */
+
 void viterbi(
   int n,
   int k,
@@ -37,9 +21,9 @@ void viterbi(
   float A[k][k],
   float B[k][n]
 ) {
-  // dp1[i,j] is the prob of most likely path of length j ending in S[i] resulting in the obs sequence
+  
   float dp1[k][t];
-  // dp2[i,j] stores predecessor state of the most likely path of length j ending in S[i] resulting in the obs sequence
+  
   int dp2[k][t];
   // Initialize DP matrices
   for (int i=0; i<k; i++) {
@@ -55,10 +39,9 @@ void viterbi(
       }
     }
   }
-  // Forward algorithm
-  // Outer loop is iterating through t time stages
+  
   for (int i=1; i<t; i++) {
-    // First inner loop is iterating through possible states
+    
     for (int j=0; j<k; j++) {
       float max = -INFINITY;
       int arg_max = -1;
